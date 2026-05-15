@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { @apply bg-dark-950 text-gray-100 font-sans; background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%); }
+
+@layer components {
+  .glass { @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-lg; }
+  .glass-sm { @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-lg; }
+  .btn { @apply px-4 py-2 rounded-lg font-medium transition-all duration-200; }
+  .btn-primary { @apply btn bg-blue-600 hover:bg-blue-700 text-white; }
+  .btn-secondary { @apply btn bg-purple-600 hover:bg-purple-700 text-white; }
+  .btn-ghost { @apply btn bg-white/10 hover:bg-white/20 text-white border border-white/20; }
+  .input-field { @apply w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500; }
+  .card { @apply glass p-6 rounded-xl; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+  .animate-fade-in { animation: fadeIn 0.3s ease-in-out; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
